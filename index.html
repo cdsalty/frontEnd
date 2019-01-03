@@ -10,37 +10,33 @@
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 </head>
 <body>
-    <div class="container">
-        <!-- <div class="row">
-            <div class="col-sm d-flex justify-content-center m-4">
-                <form id="address-search" class="form-inline">
-                    <input class="form-control" size= "58" type="text" value="" placeholder="Enter an address, city, state, or ZIP" />
-                    <button class="btn btn-primary form-control" type="submit">Submit!</button>
-                </form>
-            </div>
-        </div> -->
-        <div class="row">
-            <!-- <div id="area-map-container" class="col-8">
-                <canvas id="area-map"></canvas>
-            </div> -->
-            <div class="col-12 pb-4">
-                <table id="crime_table">
-                    <thead>
-                        <tr>
-                            <th>Crime</th>
-                            <th>Date</th>
-                            <th>Address</th>
-                        </tr>
-                    </thead>
-                    <tbody id="crime_table_body">
-                    </tbody>
-                </table>
-            </div>
+    <nav class="navbar gooFont navbar-dark navCustom">
+        <a href="" class="navbar-brand"><i class="fas fa-feather-alt mr-2"></i>safetyScore</a> <!-- now add the navbar brand; we put it inside the container so it keeps the background but moves the font over -->
+    </nav>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 searchBar">Address</div>
+    </div>
+    <div class="row">
+            <div class="col-12 col-md-8 map"><img src="http://placehold.it/500x500"></div>
+            <div class="col-12 col-md-4 score-key">2 boxes here</div>
+        </div>
+    <div class="row">
+        
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-8 dataAnal">
+            Data Analytics
+        </div>
+        <div class="col-12 col-md-4">
+            graph parameters
         </div>
     </div>
+    <div class="row"></div>
+    
 
-
-
+</div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>

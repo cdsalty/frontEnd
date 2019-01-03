@@ -1,9 +1,9 @@
 body{
-    background-color: red;
+    background-color: green;
 }
 
-.row{
-    background-color: blue;
+.searchBar{
+    border: 2px solid black;
 }
 
 .row > div{

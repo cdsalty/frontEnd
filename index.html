@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-sm d-flex justify-content-center m-4">
+                <form id="address-search" class="form-inline">
+                    <input class="form-control" size= "58" type="text" value="" placeholder="Enter an address, city, state, or ZIP" />
+                    <button class="btn btn-primary form-control" type="submit">Submit!</button>
+                </form>
+            </div>
+        </div> -->
+        <div class="row">
+            <!-- <div id="area-map-container" class="col-8">
+                <canvas id="area-map"></canvas>
+            </div> -->
+            <div class="col-12 pb-4">
+                <table id="crime_table">
+                    <thead>
+                        <tr>
+                            <th>Crime</th>
+                            <th>Date</th>
+                            <th>Address</th>
+                        </tr>
+                    </thead>
+                    <tbody id="crime_table_body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

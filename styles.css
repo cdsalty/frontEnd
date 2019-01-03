@@ -1,0 +1,12 @@
+body{
+    background-color: red;
+}
+
+.row{
+    background-color: blue;
+}
+
+.row > div{
+    background-color: white;
+    border: 2px solid black;
+}

@@ -1,5 +1,5 @@
 .navCustom{
-    background-color: #94C2C0;
+    background-color: #ED6353;
  
  }
  
@@ -9,6 +9,7 @@
  
  #jumboStyling{
     background-color: #03A6A6;
+    border-radius: 0px;
     /* background: url(“./testBackground.jpg”);      HOW TO CENTER AND STRETCH? */
  
  }
@@ -26,7 +27,7 @@
     font-family: ‘Ubuntu’, sans-serif;
  }
 body{
-    background-color: #94C2C0;
+    background-color: #1C3341;
 }
 
 .searchBar{
@@ -40,3 +41,16 @@ body{
 .safetyScore, .key {
     border: 2px solid blue;
 }
+.footerDiv{
+    background-color: #ED6353;
+}
+
+
+/* 
+Color Scheme
+#1C3341
+#008773
+#6BB983
+#F2C975
+#ED6353
+ */

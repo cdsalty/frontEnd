@@ -34,7 +34,7 @@ body{
 }
 
 .row > div{
-    background-color: white;
+    background-color: transparent;
     border: 2px solid black;
 }
 .safetyScore, .key {

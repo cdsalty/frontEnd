@@ -1,5 +1,9 @@
 $(document).ready( function () {
     console.log("ready")
+    $('.body').append(`<script src="https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap"
+    async defer></script>`)
+    console.log("append")
+
     const crimeURL = 'https://performance.fultoncountyga.gov/resource/jgdb-bp9a.json';
     const table = $('#crime_table').DataTable( {
         "paging" : true, 
@@ -19,4 +23,5 @@ $(document).ready( function () {
         })
         table.draw()
     }) //end getJSON
+    
 } );// end document.ready

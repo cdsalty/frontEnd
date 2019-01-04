@@ -45,6 +45,10 @@ body{
     background-color: #ED6353;
 }
 
+#map_holder{
+    height: 400px;
+    width: 400px;
+}
 
 /* 
 Color Scheme

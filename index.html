@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
 </head>
-<body class="">
+<body class="body">
     <div class=“jumbotron gooFont text-center mb-auto” id=“jumboStyling”> 
         <nav class="navbar gooFont navbar-dark navCustom">
             <a href="" class="navbar-brand"><i class="fas fa-feather-alt mr-2"></i>safetyScore</a> <!-- now add the navbar brand; we put it inside the container so it keeps the background but moves the font over -->
@@ -36,9 +36,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-md-8 map d-flex justify-content-center p-3">
-                <img src="http://placehold.it/400x400">
-            </div>
+            <div id="map_holder" class="col-12 col-md-8 d-flex justify-content-center p-3"></div>
             <div class="col-12 col-md-4 score-key">
                 <div class="row">
                     <div class="safetyScore col-12">Safety Score</div>
@@ -73,9 +71,10 @@
             </div>
         </div>
     </footer>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="scripts.js"></script>
+    <script src="./config.js"></script>
+    <script src="./maps.js"></script>
+    <script src="./scripts.js"></script>
 </body>
 </html>

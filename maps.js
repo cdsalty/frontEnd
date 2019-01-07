@@ -11,10 +11,16 @@ function initMap() {
 // https://developers.google.com/maps/documentation/javascript/markers
 
 function drawMarker(crimeLat, crimeLon, crime) {
+    let icon = {
+        url: `./picsForProject/${crime}.png`, // url
+        scaledSize: new google.maps.Size(50, 50), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
     let marker = new google.maps.Marker({
         position: {lat: crimeLat, lng: crimeLon},
         map: map,
-        icon: `./picsForProject/${crime}.png`
+        icon: icon
         // label: crime
     })
 }

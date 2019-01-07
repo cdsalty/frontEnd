@@ -10,11 +10,13 @@ $(document).ready( function () {
     const table = $('#crime_table').DataTable( {
         "paging" : true, 
     })
-
-    let rapeCount = 0;
+    let aggravatedCount = 0;
+    let assaultCount = 0;
+    let autoTheftCount = 0;
     let burglaryCount = 0;
+    let rapeCount = 0;
+    let robberyCount = 0;
     let theftCount = 0;
-    let 
 
 
     $.getJSON(crimeURL, (crimeData)=>{
@@ -32,16 +34,40 @@ $(document).ready( function () {
                 drawMarker(crimeLat, crimeLon, crime)
 
             }
+            if (crime == "aggravatedassault"){
+                // console.log("Anything");
+                aggravatedCount++;
+            }
+            if (crime == "assault"){
+                // console.log("Anything");
+                assaultCount++;
+            }
+            if (crime == "autotheft"){
+                // console.log("Anything");
+                autoTheftCount++;
+            }
             if (crime == "burglary"){
-                console.log("Anything");
+                // console.log("Anything");
                 burglaryCount++;
+            }
+            if (crime == "rape"){
+                // console.log("Anything");
+                rapeCount++;
+            }
+            if (crime == "robbery"){
+                // console.log("Anything");
+                robberyCount++;
+            }
+            if (crime == "theft"){
+                // console.log("Anything");
+                theftCount++;
             }
             // console.log(burglaryCount);
             // table.row.add([crime, incident[0], address])
         })
         // console.log(crimeData.stats.crime_type);
         // table.draw()
-        drawChart(burglaryCount);
+        drawChart(aggravatedCount,assaultCount,autoTheftCount,burglaryCount,rapeCount,robberyCount,theftCount);
     }) //end getJSON
     
     

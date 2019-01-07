@@ -1,8 +1,10 @@
 $(document).ready( function () {
     console.log("ready")
     $('.body').append(`<script src="https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap"
-    async defer></script>`)
+    async></script>`)
     console.log("append")
+
+    
 
     const crimeURL = 'https://performance.fultoncountyga.gov/resource/jgdb-bp9a.json';
     const table = $('#crime_table').DataTable( {
@@ -17,12 +19,12 @@ $(document).ready( function () {
             let address = stats.location;
             let crimeLat = Number(stats.latitude);
             let crimeLon = Number(stats.longitude);
-            // console.log(stats.crime_class)
-            // console.log(incident[0])
-            // console.log(stats.location)
-            // table.row.add([crime, incident[0], address])
-            // console.log("add row")
+            if (crimeLat == 0 && crimeLon == 0){
+                
+                getAddress(address)
+            }
             drawMarker(crimeLat, crimeLon, crime)
+            // table.row.add([crime, incident[0], address])
         })
 
         var ctx = document.getElementById("myChart").getContext('2d');

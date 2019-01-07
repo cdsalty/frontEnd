@@ -75,6 +75,6 @@ $(document).ready( function () {
             }
         }
     });
-    console.log(burglaryCount)
+    console.log(burglaryCount);
     
 } );// end document.ready

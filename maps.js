@@ -14,6 +14,7 @@ function drawMarker(crimeLat, crimeLon, crime) {
     let marker = new google.maps.Marker({
         position: {lat: crimeLat, lng: crimeLon},
         map: map,
+        icon: `./picsForProject/${crime}.png`
         // label: crime
     })
 }
@@ -22,9 +23,12 @@ function drawMarker(crimeLat, crimeLon, crime) {
 
 
 
-function getAddress(crimeLocation) {
+function getAddress(crimeLocation, latLng) {
     let geocodeURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${crimeLocation}&key=${geocodeKey}`
     $.getJSON(geocodeURL, (results)=>{
-        console.log(results)
+        // console.log(results)
+        // console.log(results.results[0].geometry.location)
+        let latLng = results.results[0].geometry.location
+        return latLng
     })
   }

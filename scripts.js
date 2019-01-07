@@ -1,6 +1,6 @@
 $(document).ready( function () {
     console.log("ready")
-    $('.body').append(`<script src="https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap"
+    $('body').append(`<script src="https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap"
     async></script>`)
     console.log("append")
 
@@ -21,19 +21,16 @@ $(document).ready( function () {
         crimeData.forEach((stats)=>{
             // console.log(this)
             let incident = stats.incident_date_and_time.split("T");
-            let crime = stats.crime_class;
+            let crime = stats.crime_class.toLowerCase().replace(/\s+/g, '');
             let address = stats.location;
             let crimeLat = Number(stats.latitude);
             let crimeLon = Number(stats.longitude);
-            if (crimeLat == 0 && crimeLon == 0){
-                
-                getAddress(address)
-            }
-            drawMarker(crimeLat, crimeLon, crime)
-            if (crime == 'Burglary'){
-                burglaryCount++;
-            }
+            let latLng = {}
+            if (crimeLat != 0 && crimeLon != 0){
 
+                drawMarker(crimeLat, crimeLon, crime)
+
+            }
             // table.row.add([crime, incident[0], address])
         })
         // console.log(crimeData.stats.crime_type);

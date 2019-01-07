@@ -14,7 +14,6 @@ $(document).ready( function () {
     let rapeCount = 0;
     let burglaryCount = 0;
     let theftCount = 0;
-    let 
 
 
     $.getJSON(crimeURL, (crimeData)=>{

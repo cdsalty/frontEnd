@@ -47,7 +47,7 @@
                 <a class="nav-link topBar" href="#">Contact Us</a>      <!--    WHY topBar ON EACH AND EVERY ONE? -->
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled topBar" tabindex="-1" aria-disabled="true" id="login" href="https://www.google.com">Login</a>         <!--for visual styling and using the gray-out feature; could be useful later-->
+                <a class="nav-link disabled topBar" tabindex="-1" aria-disabled="true" id="login">Login</a>     <!--for visual styling and using the gray-out feature; could be useful later-->
             </li>
         </ul>
     </div>
@@ -57,15 +57,32 @@
 <!-- OUR CAROUSEL -->
         <!--            WHAT IS @MEDIA IN CSS? BUT I CAN'T GET MY CAROSEL TO FAD-->
 <div id="carouselExampleFade" class="carousel slide carousel-fade theImages" data-ride="carousel">
+        <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+              </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="picsForProject/darkNightStreet.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-item active" style="background-image: url(picsForProject/darkNightStreet.jpg)"> 
+            <!-- <img src="picsForProject/darkNightStreet.jpg" class="d-block w-100" alt="..."> -->
+            <div class="carousel-caption">
+                    <h1>iSafety</h1>
+                    <p>Informed</p>
+                  </div>
           </div>
-          <div class="carousel-item">
-            <img src="picsForProject/alleyAtDark.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-item" style="background-image: url(picsForProject/alleyAtDark.jpg)">
+            /* <!-- <img src="picsForProject/alleyAtDark.jpg" class="d-block w-100" alt="..."> --> 
+            <div class="carousel-caption">
+                    <h1>iSafety</h1>
+                    <p>Peace of Mind</p>
+                  </div>
           </div>
-          <div class="carousel-item">
-            <img src="picsForProject/CTsurburbia.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-item" style="background-image: url(picsForProject/CTsurburbia.jpg)">
+            <!-- <img src="picsForProject/CTsurburbia.jpg" class="d-block w-100" alt="..."> -->
+            <div class="carousel-caption">
+                    <h1>iSafety</h1>
+                    <p>Local Trends</p>
+                  </div>
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -115,10 +132,7 @@
 
 <!-- ______________----------------------------_________________________---------------------------______ -->
 
-    <!-- <div class="jumbotron gooFont text-center mb-auto" id="jumboStyling">
-        <p class="title mainTitle display-3">Keeping you safe</p>
-        <h3 class="lead pb-3">subtext if needed<br>subtext if needed<br>subtext if needed</h3>
-    </div> -->
+
 
     <div class="container">
         <div class="row pt-5 pb-2 d-flex justify-content-center">
@@ -157,29 +171,29 @@
         <div class="row"></div>
         </div>
         
-    <footer class="footerDiv col-12 sticky-bottom text-light">
-        <div class="row">
+    <footer class="footerDiv col-12 sticky-bottom py-2">
+        <div class="row footColor">
             <div class="leftFooter col-6 d-flex justify-content-start">
                 <div class="leftBottom1 p-2 bd-highlight">
-                    <a class="text-secondary" href="#">About</a>
+                    <a class="footColor" href="#">About</a>
                 </div>
                 <div class="leftBottom2 p-2 bd-highlight">
-                    <a class="text-secondary" href="#">Help</a>
+                    <a class="footColor" href="#">Help</a>
                 </div>
             </div>
             <div class="rightFooter col-6 d-flex justify-content-end">
                 <div class="rightBottom1 p-2 bd-highlight">
-                    <p class="text-secondary">Copyright © 2018 CJNZ Inc.</p>
+                    <p>Copyright © 2018 CJNZ Inc.</p>
                 </div>
                 <div class="rightBottom2 p-2 bd-highlight">
-                        <p class="text-secondary">All rights reserved</p>
+                        <p>All rights reserved</p>
                 </div>
             </div>
         </div>
     </footer>
 
 
-    
+                  
 
 </body>
 </html>

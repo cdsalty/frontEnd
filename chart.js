@@ -1,7 +1,7 @@
 function drawChart(aggravatedCount,assaultCount,autoTheftCount,burglaryCount,rapeCount,robberyCount,theftCount){
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'doughnut',
         data: {
             labels: ["Aggravated Assault", "Assault","Auto Theft", "Burglary","Rape", "Robbery", "Theft"],
             datasets: [{

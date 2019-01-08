@@ -1,12 +1,12 @@
-function drawChart(burglaryCount){
+function drawChart(aggravatedCount,assaultCount,autoTheftCount,burglaryCount,rapeCount,robberyCount,theftCount){
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ["Rape", "Assault", "Robbery", "Theft", "Burglary", "Arson"],
+            labels: ["Aggravated Assault", "Assault","Auto Theft", "Burglary","Rape", "Robbery", "Theft"],
             datasets: [{
                 label: '# of Votes',
-                data: [2,2,3,7,burglaryCount,4],
+                data: [aggravatedCount,assaultCount,autoTheftCount,burglaryCount,rapeCount,robberyCount,theftCount],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',

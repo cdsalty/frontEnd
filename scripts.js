@@ -11,9 +11,9 @@ $(document).ready( function () {
     // initialize some global variables for use later on
     let requestFinished = false
     const crimeURL = 'https://performance.fultoncountyga.gov/resource/jgdb-bp9a.json';
-    const table = $('#crime_table').DataTable( {
-        "paging" : true, 
-    })
+    // const table = $('#crime_table').DataTable( {
+    //     "paging" : true, 
+    // })
     let aggravatedCount = 0;
     let assaultCount = 0;
     let autoTheftCount = 0;

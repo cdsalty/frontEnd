@@ -12,10 +12,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="./config.js"></script>
+    <script src="./image.js"></script>
     <script src="./maps.js"></script>
     <script src="./maps2.js"></script>
     <script src="./chart.js"></script>
@@ -47,7 +47,7 @@
                 <a class="nav-link topBar" href="#">Contact Us</a>      <!--    WHY topBar ON EACH AND EVERY ONE? -->
             </li>
             <li class="nav-item">
-                <a class="nav-link topBar" href="#">Login In</a>         <!--for visual styling and using the gray-out feature; could be useful later-->
+                <a class="nav-link disabled topBar" tabindex="-1" aria-disabled="true" id="login" href="https://www.google.com">Login</a>         <!--for visual styling and using the gray-out feature; could be useful later-->
             </li>
         </ul>
     </div>
@@ -56,7 +56,7 @@
 
 <!-- OUR CAROUSEL -->
         <!--            WHAT IS @MEDIA IN CSS? BUT I CAN'T GET MY CAROSEL TO FAD-->
-<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade theImages" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="picsForProject/darkNightStreet.jpg" class="d-block w-100" alt="...">
@@ -65,7 +65,7 @@
             <img src="picsForProject/alleyAtDark.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="picsForProject/inTheBronx.jpeg" class="d-block w-100" alt="...">
+            <img src="picsForProject/CTsurburbia.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
@@ -101,32 +101,32 @@
       </div> -->
 <!-- ______________----------------------------_________________________---------------------------______ -->
 
-<div class="jumbotron jumbotron-fluid transitionElement">
-    <div class="container-fliud">
+<!-- <div class="jumbotron jumbotron-fluid transitionElement">
+    <div class="container-fluid textFont">
         <h1 class="display-4">Did You Know</h1>
         <h4>ANY TEXT HERE?</h4>
             <p class="lead">The most common hours for a burglary to occur are between 10am-3pm</p>
             <p class="lead">Robberies down by 24 % between 2012 and 2016.</p>
         </div>
-      </div>
+      </div> -->
 
 
 
 
 <!-- ______________----------------------------_________________________---------------------------______ -->
 
-    <div class="jumbotron gooFont text-center mb-auto" id="jumboStyling">
+    <!-- <div class="jumbotron gooFont text-center mb-auto" id="jumboStyling">
         <p class="title mainTitle display-3">Keeping you safe</p>
         <h3 class="lead pb-3">subtext if needed<br>subtext if needed<br>subtext if needed</h3>
-    </div>
+    </div> -->
 
     <div class="container">
-        <div class="row">
-            <div class="col-12 searchBar text-light">
+        <div class="row pt-5 pb-2 d-flex justify-content-center">
+            <div class="col-12 searchBar text-light d-flex justify-content-center">
                 <form  onsubmit="submitForm(event)" class="d-flex justify-content-center">
-                <label class="px-3" for="exampleInputPassword1">Address</label>
+                <!-- <label class="px-3" for="exampleInputPassword1">address</label> -->
                     <div class="input-group">
-                        <input type="text" class="form-control" id="searchBar" placeholder="Address">
+                        <input type="text" class="form-control" id="searchBar" size="80" placeholder="Address">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-primary">Search</button>
                         </div>
@@ -135,24 +135,24 @@
             </div>
         </div>
 
-        <div class="row">
-            <div id="map_holder" class="col-12 col-md-8 d-flex justify-content-center p-3"></div>
-            <div class="col-12 col-md-4 score-key">
+        <div class="row d-flex justify-content-center">
+            <div id="map_holder" class="col-12 col-md-8"></div>
+            <!-- <div class="col-12 col-md-4 score-key">
                 <div class="row">
                     <div class="safetyScore col-12">Safety Score</div>
                     <div class="key col-12">Key</div>
                 </div>
-            </div>
+            </div> -->
         </div>
 
         <div class="row"></div>
 
-        <div class="row">
+        <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-8 dataAnal">
                 <canvas id="myChart" width="400" height="400"></canvas>
             </div>
-            <div class="col-12 col-md-4">graph parameters</div>
-        </div>
+            <!-- <div class="col-12 col-md-4">graph parameters</div> -->
+         </div>
 
         <div class="row"></div>
         </div>

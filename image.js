@@ -1,0 +1,1 @@
+$(".theImages").css("height","500px");

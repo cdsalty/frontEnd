@@ -1,4 +1,6 @@
 
+/* NEW COLOR SCEME: #12130F, #5B9279, #8FCB9B, #EAE6E5, #8F8073 */
+
 .topBar{
     background-color: #5B9279;
     font-family: ‘Ubuntu’, sans-serif;
@@ -10,9 +12,17 @@
 }
 .transitionElement{
     font-family: ‘Ubuntu’, sans-serif;
-    
 }
- 
+ .theImages img{
+     height: 800px;
+     width: 100%;
+ }
+.textFont{
+    font-family: ‘Ubuntu’, sans-serif;
+}
+ /* .theImages{
+     height: 100px;
+ } */
  #sportsLink{
     color: blue;
  }
@@ -40,14 +50,14 @@ body{
     background-color: #1C3341;
 }
 
-.searchBar{
-    border: 2px solid blue;
+.login{
+    pointer-events: none;
 }
 
-.row > div{
+/* .row > div{
     background-color: transparent;
     border: 2px solid black;
-}
+} */
 .safetyScore, .key {
     border: 2px solid blue;
 }

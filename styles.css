@@ -10,13 +10,34 @@
     font-family: ‘Ubuntu’, sans-serif;
     color: #EAE6E5; 
 }
+.carousel-caption{
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    /* his will move it 50% of it's OWN width to the left */
+    transform: translateX(-50%);
+}
+
+.carousel-caption > h1{
+    font-size: 10.5rem;
+}
+
+.carousel-caption > p{
+    font-size: 2.5rem;
+}
 .transitionElement{
     font-family: ‘Ubuntu’, sans-serif;
 }
- .theImages img{
-     height: 800px;
-     width: 100%;
- }
+.carousel-item{
+    min-height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+/* .carousel-item img {
+    object-fit: contain;
+} */
+
+
 .textFont{
     font-family: ‘Ubuntu’, sans-serif;
 }
@@ -47,7 +68,9 @@
     font-family: ‘Ubuntu’, sans-serif;
  }
 body{
-    background-color: #1C3341;
+    background-color: #EAE6E5;
+    font-family: ‘Ubuntu’, sans-serif;
+
 }
 
 .login{
@@ -62,8 +85,13 @@ body{
     border: 2px solid blue;
 }
 .footerDiv{
-    background-color: #ED6353;
+    background-color: #8F8073;
 }
+
+.footColor{
+    color: white;
+}
+
 
 #map_holder{
     height: 400px;

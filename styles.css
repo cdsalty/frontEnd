@@ -1,7 +1,17 @@
-.navCustom{
-    background-color: #ED6353;
- 
- }
+
+.topBar{
+    background-color: #5B9279;
+    font-family: ‘Ubuntu’, sans-serif;
+    color: #EAE6E5;
+}
+.logoTop{
+    font-family: ‘Ubuntu’, sans-serif;
+    color: #EAE6E5; 
+}
+.transitionElement{
+    font-family: ‘Ubuntu’, sans-serif;
+    
+}
  
  #sportsLink{
     color: blue;

@@ -9,6 +9,14 @@
     <link rel=“stylesheet” href=“https://use.fontawesome.com/releases/v5.6.3/css/all.css” integrity=“sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/” crossorigin=“anonymous”>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
+    <script src="./config.js"></script>
+    <script src="./maps.js"></script>
+    <script src="./maps2.js"></script>
+    <script src="./chart.js"></script>
+    <script src="./scripts.js"></script>
 </head>
 
 <body>        
@@ -112,10 +120,10 @@
     <div class="container">
         <div class="row">
             <div class="col-12 searchBar text-light">
-                <form class="d-flex justify-content-center">
+                <form  onsubmit="submitForm(event)" class="d-flex justify-content-center">
                 <label class="px-3" for="exampleInputPassword1">Address</label>
                     <div class="input-group">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Address">
+                        <input type="text" class="form-control" id="searchBar" placeholder="Address">
                         <div class="input-group-append">
                             <button type="submit" class="btn btn-primary">Search</button>
                         </div>
@@ -167,12 +175,7 @@
     </footer> -->
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js"></script>
-    <script src="./config.js"></script>
-    <script src="./maps.js"></script>
-    <script src="./chart.js"></script>
-    <script src="./scripts.js"></script>
+    
+
 </body>
 </html>

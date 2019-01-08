@@ -1,11 +1,15 @@
+function submitForm(event){
+    event.preventDefault()
+    // console.log('sanity check')
+    let address = $('#searchBar').val();
+    // console.log(address)
+    centerMap(address)
+}
+
 $(document).ready( function () {
-    console.log("ready")
-    $('body').append(`<script src="https://maps.googleapis.com/maps/api/js?key=${mapsKey}&callback=initMap"
-    async></script>`)
-    console.log("append")
 
-    
-
+    // initialize some global variables for use later on
+    let requestFinished = false
     const crimeURL = 'https://performance.fultoncountyga.gov/resource/jgdb-bp9a.json';
     const table = $('#crime_table').DataTable( {
         "paging" : true, 
@@ -18,59 +22,81 @@ $(document).ready( function () {
     let robberyCount = 0;
     let theftCount = 0;
 
+    // send ajax request to pull crime data for Fulton County
 
     $.getJSON(crimeURL, (crimeData)=>{
-        // console.log("getJSON")
+
+        // loop through the array that is returned to pull data on specific crimes
+
         crimeData.forEach((stats)=>{
-            // console.log(this)
+
+            // initialize some variables to pull crime specific data
+
             let incident = stats.incident_date_and_time.split("T");
             let crime = stats.crime_class.toLowerCase().replace(/\s+/g, '');
             let address = stats.location;
             let crimeLat = Number(stats.latitude);
             let crimeLon = Number(stats.longitude);
-            let latLng = {}
+
+            // if we already have lat and lng DataCue, plot the points on the map
+
             if (crimeLat != 0 && crimeLon != 0){
 
                 drawMarker(crimeLat, crimeLon, crime)
 
             }
+
+            // otherwise, get the geocoding data from an ajax request 
+            // and use recursion to force the computer to wait
+            // then change the lat lng data for this crime and plot it
+
+            if(crimeLat == 0 && crimeLon == 0){
+                
+                let latLng = getGeocode(address)
+
+                if(requestFinished){
+                    crimeLat = latLng[0]
+                    crimeLon = latLng[1]
+                    drawMarker(crimeLat,crimeLon,crime)
+                }else{
+                    getGeocode(latLng)
+                }
+
+            }
+
+            // logic to count how many of each crime is committed for the
+            // data analytics graphs
+
             if (crime == "aggravatedassault"){
-                // console.log("Anything");
                 aggravatedCount++;
             }
             if (crime == "assault"){
-                // console.log("Anything");
                 assaultCount++;
             }
             if (crime == "autotheft"){
-                // console.log("Anything");
                 autoTheftCount++;
             }
             if (crime == "burglary"){
-                // console.log("Anything");
                 burglaryCount++;
             }
             if (crime == "rape"){
-                // console.log("Anything");
                 rapeCount++;
             }
             if (crime == "robbery"){
-                // console.log("Anything");
                 robberyCount++;
             }
             if (crime == "theft"){
-                // console.log("Anything");
                 theftCount++;
             }
-            // console.log(burglaryCount);
-            // table.row.add([crime, incident[0], address])
-        })
-        // console.log(crimeData.stats.crime_type);
-        // table.draw()
+
+        })  // end forEach
+
+        // call drawChart() to initialize the graph with the crime count data
+
         drawChart(aggravatedCount,assaultCount,autoTheftCount,burglaryCount,rapeCount,robberyCount,theftCount);
-    }) //end getJSON
+    
+    }) // end getJSON
     
     
-    // console.log(burglaryCount);
     
 } );// end document.ready

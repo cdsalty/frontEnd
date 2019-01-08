@@ -93,7 +93,7 @@ $(document).ready( function () {
 
         // call drawChart() to initialize the graph with the crime count data
 
-        drawChart(aggravatedCount,assaultCount,autoTheftCount,burglaryCount,rapeCount,robberyCount,theftCount);
+        drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravatedCount,theftCount);
     
     }) // end getJSON
     

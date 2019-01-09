@@ -49,5 +49,5 @@ async function getGeocode(crimeLocation) {
 
     })// end getJSON
     return latLng
-  }// end function
+}// end function
 

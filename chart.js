@@ -29,11 +29,6 @@ function drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravate
         options: {
             legend: {
                 position: "right"
-        //         yAxes: [{
-        //             ticks: {
-        //                 beginAtZero:true
-        //             }
-        //         }]
             }
         }
     });

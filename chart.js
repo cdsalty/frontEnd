@@ -3,25 +3,25 @@ function drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravate
     var myChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-            labels: ["Burglary","Auto Theft", "Rape", "Robbery","Aggravated Assault", "Theft"],
+            labels: ["Burglary","Auto Theft", "Rape", "Robbery","Aggravated Assault", "Property Theft"],
             datasets: [{
                 label: '',
                 data: [burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravatedCount,theftCount],
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.9)',
-                    'rgba(255, 206, 86, 0.9)',
-                    'rgba(255, 0, 0, 0.9)',
-                    'rgba(153, 102, 255, 0.9)',
-                    'rgba(255, 159, 64, 0.9)',
-                    'rgba(0, 76, 153, 0.9)'
+                    'rgba(3, 200, 2, 0.9)',
+                    'rgba(240, 228, 78, 0.9)',
+                    'rgba(216, 88, 100, 0.9)',
+                    'rgba(204, 149, 247, 0.9)',
+                    'rgba(255, 127, 0, 0.9)',
+                    'rgba(108, 146, 253, 0.9)'
                 ],
                 borderColor: [
-                    'rgba(255,99,132,1)',
-                    'rgba(255, 206, 86, 1)',
-                    'rgba(255, 0, 0, 1)',
-                    'rgba(153, 102, 255, 1)',
-                    'rgba(255, 159, 64, 1)',
-                    'rgba(0, 76, 153, 1)'
+                    'rgba(3, 200, 2, 1)',
+                    'rgba(240, 228, 78, 1)',
+                    'rgba(216, 88, 100, 1)',
+                    'rgba(204, 149, 247, 1)',
+                    'rgba(255, 127, 0, 1)',
+                    'rgba(108, 146, 253, 1)'
                 ],
                 borderWidth: 3
             }]
@@ -29,11 +29,6 @@ function drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravate
         options: {
             legend: {
                 position: "right"
-        //         yAxes: [{
-        //             ticks: {
-        //                 beginAtZero:true
-        //             }
-        //         }]
             }
         }
     });

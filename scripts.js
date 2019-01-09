@@ -1,8 +1,15 @@
 function submitForm(event){
+
+    // since we are using a form the first thing we must do is stop the default behavior
+
     event.preventDefault()
-    // console.log('sanity check')
+    
+    // pull the value the user types into the search bar and save it to a variable
+
     let address = $('#searchBar').val();
-    // console.log(address)
+
+    // pass that variable to the centerMap function to recenter the map at the address provided
+    
     centerMap(address)
 }
 
@@ -11,9 +18,6 @@ $(document).ready( function () {
     // initialize some global variables for use later on
     let requestFinished = false
     const crimeURL = 'https://performance.fultoncountyga.gov/resource/jgdb-bp9a.json';
-    // const table = $('#crime_table').DataTable( {
-    //     "paging" : true, 
-    // })
     let aggravatedCount = 0;
     let assaultCount = 0;
     let autoTheftCount = 0;
@@ -37,30 +41,34 @@ $(document).ready( function () {
             let address = stats.location;
             let crimeLat = Number(stats.latitude);
             let crimeLon = Number(stats.longitude);
+            let latLng = {lat: crimeLat, lng: crimeLon}
 
             // if we already have lat and lng DataCue, plot the points on the map
 
             if (crimeLat != 0 && crimeLon != 0){
 
-                drawMarker(crimeLat, crimeLon, crime)
+                drawMarker(latLng)
 
             }
 
-            // otherwise, get the geocoding data from an ajax request 
-            // and use recursion to force the computer to wait
-            // then change the lat lng data for this crime and plot it
+            // if the lat/lng data is missing from the JSON then we must use google maps
+            // to get the geocoding data
+            
+            // since JS is an async language and we need it to wait for google maps
+            // to return some DataCue, we need to use promises to tell JS to not execute
+            // the code on line 67 until google is done
 
             if(crimeLat == 0 && crimeLon == 0){
-                
-                let latLng = getGeocode(address)
+                let getCoords = new Promise((resolve,reject)=>{
+                    resolve(getGeocode(address))
+                })
 
-                if(requestFinished){
-                    crimeLat = latLng[0]
-                    crimeLon = latLng[1]
-                    drawMarker(crimeLat,crimeLon,crime)
-                }else{
-                    getGeocode(latLng)
-                }
+                getCoords.then((coordinateObject)=>{
+
+                    drawMarker(coordinateObject)
+
+                })
+                
 
             }
 

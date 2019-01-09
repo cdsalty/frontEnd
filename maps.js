@@ -1,6 +1,12 @@
+// initialize the map variable as a global variable so that we can reference it later
+// in the code when we need to draw markers and recenter the map
 
-let map;
+let crimeMap;
 function initMap() {
+
+    // init a new map centered on Atlanta
+    // this function will be called when the google maps api is finished loading using a callback
+
     crimeMap = new google.maps.Map(document.getElementById('map_holder'), {
         center: {lat: 33.7490, lng: -84.3880},
         zoom: 15
@@ -8,49 +14,44 @@ function initMap() {
 
 }
 
+// link to the documentation on google maps markers for future reference
 // https://developers.google.com/maps/documentation/javascript/markers
 
-function drawMarker(crimeLat, crimeLon, crime) {
-    // let icon = {
-    //     url: `./picsForProject/${crime}.png`, // url
-    //     scaledSize: new google.maps.Size(30, 30), // scaled size
-    //     origin: new google.maps.Point(0,0), // origin
-    //     anchor: new google.maps.Point(0, 0) // anchor
-    // };
+function drawMarker(latLng) {
+    // draw a new marker at the coordinates provided
+
     let marker = new google.maps.Marker({
-        position: {lat: crimeLat, lng: crimeLon},
+        position: latLng,
         map: crimeMap,
-        // icon: icon
-        // label: crime
+
     })
 }
 
-function centerMap(address) {
-    let latLng = getGeocode(address)
-    console.log(latLng)
+async function centerMap(address) {
+    //get address lat/lng object from google maps api and set it to a variable
+
+    let center = await getGeocode(address)
+
+    // take object just returned and recenter map at that location
+
+    crimeMap.panTo(center);
 
 }
 
 
 
-function getGeocode(crimeLocation) {
+async function getGeocode(crimeLocation) {
+
+    // init some variables to be used later in the function
+
     let geocodeURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${crimeLocation}&key=${geocodeKey}`
+    let latLng
+    await $.getJSON(geocodeURL, (results)=>{
+        //get address lat/lng object from google maps api and return it
 
-    $.getJSON(geocodeURL, (results)=>{
-        // console.log(results)
-        // console.log(results.results[0].geometry.location)
-        // results.results[0].geometry.location
-        let latLng = []
-        latLng.push(results.results[0].geometry.location.lat)
-        latLng.push(results.results[0].geometry.location.lng)
-        // console.log(latLng)
-        requestFinished = true
-        return latLng
-        // resolve(latLng)
+        latLng = results.results[0].geometry.location
+
     })// end getJSON
-
+    return latLng
   }// end function
 
-//   let addressPromise = new Promise(function(resolve, reject){
-
-//   })

@@ -31,6 +31,9 @@
 .textFont{
     font-family: ‘Ubuntu’, sans-serif;
 }
+.map-rounded{
+    border-radius: 5px;
+}
 #sportsLink{
     color: blue;
 }

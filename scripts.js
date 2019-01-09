@@ -60,7 +60,7 @@ $(document).ready( function () {
             }
             if (crime == "burglary"){
                 burglaryCount++;
-                iconPath = './picsForProject/pink_MarkerP.png'
+                iconPath = './picsForProject/darkgreen_MarkerP.png'
             }
             if (crime == "rape"){
                 rapeCount++;

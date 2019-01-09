@@ -26,7 +26,7 @@ function drawMarker(latLng, iconPath) {
     })
 }
 function drawAddress(latLng) {
-    // draw a new marker at the coordinates provided
+    // draw a new marker at the user provided location
 
     let marker = new google.maps.Marker({
         position: latLng,

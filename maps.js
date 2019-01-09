@@ -17,12 +17,13 @@ function initMap() {
 // link to the documentation on google maps markers for future reference
 // https://developers.google.com/maps/documentation/javascript/markers
 
-function drawMarker(latLng) {
+function drawMarker(latLng, iconPath) {
     // draw a new marker at the coordinates provided
 
     let marker = new google.maps.Marker({
         position: latLng,
         map: crimeMap,
+        icon: iconPath
 
     })
 }

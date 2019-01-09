@@ -42,12 +42,45 @@ $(document).ready( function () {
             let crimeLat = Number(stats.latitude);
             let crimeLon = Number(stats.longitude);
             let latLng = {lat: crimeLat, lng: crimeLon}
+            let iconPath
+
+            // logic to count how many of each crime is committed for the
+            // data analytics graphs and marker color
+
+            if (crime == "aggravatedassault"){
+                aggravatedCount++;
+                iconPath = './picsForProject/orange_MarkerV.png'
+            }
+            if (crime == "assault"){
+                assaultCount++;
+
+            }
+            if (crime == "autotheft"){
+                autoTheftCount++;
+                iconPath = './picsForProject/yellow_MarkerP.png'
+            }
+            if (crime == "burglary"){
+                burglaryCount++;
+                iconPath = './picsForProject/pink_MarkerP.png'
+            }
+            if (crime == "rape"){
+                rapeCount++;
+                iconPath = './picsForProject/red_MarkerV.png'
+            }
+            if (crime == "robbery"){
+                robberyCount++;
+                iconPath = './picsForProject/purple_MarkerV.png'
+            }
+            if (crime == "theft"){
+                theftCount++;
+                iconPath = './picsForProject/blue_MarkerP.png'
+            }
 
             // if we already have lat and lng DataCue, plot the points on the map
 
             if (crimeLat != 0 && crimeLon != 0){
 
-                drawMarker(latLng)
+                drawMarker(latLng, iconPath)
 
             }
 
@@ -65,37 +98,14 @@ $(document).ready( function () {
 
                 getCoords.then((coordinateObject)=>{
 
-                    drawMarker(coordinateObject)
+                    drawMarker(coordinateObject, iconPath)
 
                 })
                 
 
             }
 
-            // logic to count how many of each crime is committed for the
-            // data analytics graphs
-
-            if (crime == "aggravatedassault"){
-                aggravatedCount++;
-            }
-            if (crime == "assault"){
-                assaultCount++;
-            }
-            if (crime == "autotheft"){
-                autoTheftCount++;
-            }
-            if (crime == "burglary"){
-                burglaryCount++;
-            }
-            if (crime == "rape"){
-                rapeCount++;
-            }
-            if (crime == "robbery"){
-                robberyCount++;
-            }
-            if (crime == "theft"){
-                theftCount++;
-            }
+            
 
         })  // end forEach
 

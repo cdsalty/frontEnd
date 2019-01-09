@@ -5,7 +5,7 @@ function drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravate
         data: {
             labels: ["Burglary","Auto Theft", "Rape", "Robbery","Aggravated Assault", "Theft"],
             datasets: [{
-                label: '# of Votes',
+                label: '',
                 data: [burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravatedCount,theftCount],
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.9)',
@@ -26,14 +26,15 @@ function drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravate
                 borderWidth: 3
             }]
         },
-        // options: {
-        //     scales: {
+        options: {
+            legend: {
+                position: "right"
         //         yAxes: [{
         //             ticks: {
         //                 beginAtZero:true
         //             }
         //         }]
-        //     }
-        // }
+            }
+        }
     });
 }

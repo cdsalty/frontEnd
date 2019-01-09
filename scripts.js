@@ -7,7 +7,7 @@ function submitForm(event){
     // pull the value the user types into the search bar and save it to a variable
 
     let address = $('#searchBar').val();
-
+    $('#searchBar').val("");
     // pass that variable to the centerMap function to recenter the map at the address provided
     
     centerMap(address)
@@ -53,7 +53,6 @@ $(document).ready( function () {
             }
             if (crime == "assault"){
                 assaultCount++;
-
             }
             if (crime == "autotheft"){
                 autoTheftCount++;
@@ -79,9 +78,7 @@ $(document).ready( function () {
             // if we already have lat and lng DataCue, plot the points on the map
 
             if (crimeLat != 0 && crimeLon != 0){
-
                 drawMarker(latLng, iconPath)
-
             }
 
             // if the lat/lng data is missing from the JSON then we must use google maps
@@ -95,18 +92,10 @@ $(document).ready( function () {
                 let getCoords = new Promise((resolve,reject)=>{
                     resolve(getGeocode(address))
                 })
-
                 getCoords.then((coordinateObject)=>{
-
                     drawMarker(coordinateObject, iconPath)
-
                 })
-                
-
             }
-
-            
-
         })  // end forEach
 
         // call drawChart() to initialize the graph with the crime count data
@@ -114,7 +103,4 @@ $(document).ready( function () {
         drawChart(burglaryCount,autoTheftCount,rapeCount,robberyCount,aggravatedCount,theftCount);
     
     }) // end getJSON
-    
-    
-    
 } );// end document.ready

@@ -11,7 +11,6 @@ function initMap() {
         center: {lat: 33.7490, lng: -84.3880},
         zoom: 15
     });
-
 }
 
 // link to the documentation on google maps markers for future reference
@@ -24,7 +23,6 @@ function drawMarker(latLng, iconPath) {
         position: latLng,
         map: crimeMap,
         icon: iconPath
-
     })
 }
 
@@ -36,10 +34,7 @@ async function centerMap(address) {
     // take object just returned and recenter map at that location
 
     crimeMap.panTo(center);
-
 }
-
-
 
 async function getGeocode(crimeLocation) {
 

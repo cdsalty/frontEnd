@@ -25,6 +25,15 @@ function drawMarker(latLng, iconPath) {
         icon: iconPath
     })
 }
+function drawAddress(latLng) {
+    // draw a new marker at the coordinates provided
+
+    let marker = new google.maps.Marker({
+        position: latLng,
+        map: crimeMap,
+        animation: google.maps.Animation.DROP,
+    })
+}
 
 async function centerMap(address) {
     //get address lat/lng object from google maps api and set it to a variable
@@ -34,6 +43,7 @@ async function centerMap(address) {
     // take object just returned and recenter map at that location
 
     crimeMap.panTo(center);
+    drawAddress(center)
 }
 
 async function getGeocode(crimeLocation) {
